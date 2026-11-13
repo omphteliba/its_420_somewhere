@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f2e4" />
+  <title>4:20 Now – It's 420 somewhere</title>
+  <meta name="description" content="Somewhere in the world it's always 4:20. See where right now." />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <img class="logo" src="icon.svg" alt="" width="46" height="46" />
+      <div class="titles">
+        <h1>4:20 Now</h1>
+        <p data-i18n="tagline">It's 420 somewhere.</p>
+      </div>
+      <button class="icon-btn" id="settings-btn" aria-label="Settings" data-i18n-aria="settings">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm7.4-2.1.1-1.4-.1-1.4 2-1.6-2-3.4-2.4.9a7.6 7.6 0 0 0-2.4-1.4L14.2 2h-4.4l-.4 2.6c-.9.3-1.7.8-2.4 1.4l-2.4-.9-2 3.4 2 1.6-.1 1.4.1 1.4-2 1.6 2 3.4 2.4-.9c.7.6 1.5 1.1 2.4 1.4l.4 2.6h4.4l.4-2.6c.9-.3 1.7-.8 2.4-1.4l2.4.9 2-3.4-2-1.6Z"/></svg>
+      </button>
+    </header>
+
+    <main>
+      <!-- Current place -->
+      <section class="hero card" aria-live="polite">
+        <p class="eyebrow"><span aria-hidden="true">🌿</span> <span id="hero-eyebrow">It's 4:20 in</span></p>
+        <div class="flag-badge"><img id="hero-flag" alt="" /></div>
+        <div class="haze" id="haze">
+          <svg class="leaf-sea" id="leaf-sea" aria-hidden="true"></svg>
+          <div class="hero-text">
+            <h2 id="hero-city">…</h2>
+            <p class="hero-country" id="hero-country"></p>
+            <p class="hero-also" id="hero-also"></p>
+            <div class="chips">
+              <span class="chip" id="since-chip">⏱ <span id="since-text"></span></span>
+              <button class="chip" id="distance-btn">📍 <span id="distance-text" data-i18n="howFar">How far?</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Next place -->
+      <section class="next card">
+        <div class="next-row">
+          <div>
+            <p class="label" data-i18n="nextSesh">Next sesh</p>
+            <p class="next-city"><img class="flag" id="next-flag" alt="" /> <span id="next-city"></span></p>
+          </div>
+          <p class="next-in" id="next-in"></p>
+        </div>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="progress">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </section>
+
+      <!-- Your clock -->
+      <section class="you card">
+        <div>
+          <p class="label" data-i18n="yourTime">Your time</p>
+          <p class="you-clock" id="you-clock">--:--</p>
+        </div>
+        <p class="you-next" id="you-next"></p>
+      </section>
+
+      <!-- Strains from the current time zone -->
+      <section class="strains">
+        <h3 data-i18n="strainsTitle">Strains from around here</h3>
+        <p class="hint" id="strains-hint"></p>
+        <div id="strain-list" class="strain-list" tabindex="0" aria-roledescription="carousel"></div>
+        <div class="carousel-nav" id="carousel-nav">
+          <button class="nav-btn" id="strain-prev" aria-label="Previous" data-i18n-aria="prev">‹</button>
+          <span id="strain-count" aria-live="polite"></span>
+          <button class="nav-btn" id="strain-next" aria-label="Next" data-i18n-aria="next">›</button>
+        </div>
+      </section>
+
+      <!-- Timeline -->
+      <section class="timeline">
+        <h3 data-i18n="upNext">Up next</h3>
+        <p class="hint" data-i18n="upNextHint">When it hits 4:20 there – in your local time.</p>
+        <ol id="timeline"></ol>
+      </section>
+
+      <button class="install-btn" id="install-btn" hidden>＋ <span data-i18n="install">Add to home screen</span></button>
+    </main>
+
+    <footer class="foot">
+      <p data-i18n="responsibly">Enjoy responsibly – and only where it's legal 🌿</p>
+    </footer>
+  </div>
+
+  <dialog id="settings">
+    <form method="dialog">
+      <h3 data-i18n="settings">Settings</h3>
+      <fieldset>
+        <legend data-i18n="language">Language</legend>
+        <label><input type="radio" name="lang" value="auto" /> <span data-i18n="langAuto">Automatic (browser)</span></label>
+        <label><input type="radio" name="lang" value="de" /> Deutsch</label>
+        <label><input type="radio" name="lang" value="en" /> English</label>
+      </fieldset>
+      <fieldset>
+        <legend data-i18n="clock">Clock</legend>
+        <label><input type="radio" name="clock" value="auto" /> <span data-i18n="langAuto">Automatic (browser)</span></label>
+        <label><input type="radio" name="clock" value="24" /> 16:20</label>
+        <label><input type="radio" name="clock" value="12" /> 4:20 PM</label>
+      </fieldset>
+      <div class="dialog-actions"><button value="close" data-i18n="close">Close</button></div>
+    </form>
+  </dialog>
+
+  <script src="leaf-path.js"></script>
+  <script src="cities.js"></script>
+  <script src="strains.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

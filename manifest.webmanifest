@@ -1,0 +1,13 @@
+{
+  "name": "4:20 Now",
+  "short_name": "4:20 Now",
+  "description": "Somewhere in the world it's always 4:20.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f2e4",
+  "theme_color": "#f4f2e4",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
