@@ -2,7 +2,7 @@
 
 const TARGET_SEC = 16 * 3600 + 20 * 60; // 16:20:00
 const DAY = 86400;
-const FLAG_URL = (cc) => `https://flagcdn.com/${cc}.svg`;
+const FLAG_URL = (cc) => `flags/${cc}.png`;
 
 // Optional for testing: ?at=2026-04-20T15:20:00Z simulates a start time.
 const clockOffset = (() => {
@@ -59,6 +59,7 @@ const TEXT = {
     carousel: "carousel",
     titleLit: (city) => `🔥 4:20 in ${city}`,
     whatIs420: "What is 420?",
+    legal: "Legal notice & privacy",
     prev: "Previous",
     next: "Next",
     eggs: {
@@ -117,6 +118,7 @@ const TEXT = {
     carousel: "Karussell",
     titleLit: (city) => `🔥 Jetzt 4:20 in ${city}`,
     whatIs420: "Was ist 420?",
+    legal: "Impressum & Datenschutz",
     prev: "Zurück",
     next: "Weiter",
     eggs: {
