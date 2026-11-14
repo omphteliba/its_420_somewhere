@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f2e4" />
+  <title>What is 420? – 4:20 Now</title>
+  <meta name="description" content="Where does 420 come from? The Waldos, the Grateful Dead, High Times – and the myths that aren't true." />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Same language choice as the app: saved setting, otherwise the browser.
+    (function () {
+      var saved = localStorage.getItem("lang");
+      var lang = saved && saved !== "auto" ? saved
+        : (navigator.language || "en").toLowerCase().indexOf("de") === 0 ? "de" : "en";
+      document.documentElement.lang = lang;
+    })();
+  </script>
+  <style>
+    html[lang="de"] [lang="en"], html:not([lang="de"]) [lang="de"] { display: none; }
+    .story h2 { font-family: var(--serif); font-weight: 800; font-size: 1.6rem; line-height: 1.2; margin: 0.2rem 0 0.4rem; }
+    .story .lead { color: var(--muted); margin: 0 0 1rem; }
+    .story .card { padding: 1rem 1.15rem; }
+    .story .card.first { background: var(--card-top); box-shadow: 0 10px 30px rgba(63, 143, 72, 0.18); }
+    .story h3 { font-family: var(--serif); font-weight: 800; font-size: 1.1rem; margin: 0 0 0.5rem; color: var(--green-dark); }
+    .story p { margin: 0 0 0.6rem; }
+    .story p:last-child, .story ul:last-child { margin-bottom: 0; }
+    .story ul { margin: 0; padding-left: 1.1rem; }
+    .story li { margin-bottom: 0.45rem; }
+    .story .year { font-family: var(--mono); font-weight: 700; color: var(--green-dark); }
+    .story .oil { background: #f3dd9a; }
+    .story .oil h3 { color: #7a5410; }
+    .back { color: var(--green-dark); font-weight: 700; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .titles a { color: inherit; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <a href="./"><img class="logo" src="icon.svg" alt="" width="46" height="46" /></a>
+      <div class="titles">
+        <h1><a href="./">4:20 Now</a></h1>
+        <p><span lang="en">It's 420 somewhere.</span><span lang="de">Irgendwo ist immer 4:20.</span></p>
+      </div>
+    </header>
+
+    <!-- ========== Deutsch ========== -->
+    <main class="story" lang="de">
+      <p><a class="back" href="./">← Zurück zur App</a></p>
+      <h2>Was ist 420?</h2>
+      <p class="lead">„420“ ist der wohl bekannteste Code der Kifferkultur: 4:20 Uhr nachmittags ist die Zeit zum Kiffen, der 20. April ihr Feiertag. Woher der Code kommt, ist nicht ganz sicher – aber eine Geschichte hat die besten Belege.</p>
+
+      <section class="card first">
+        <h3>Die Waldos, 1971</h3>
+        <p>An der San Rafael High School nördlich von San Francisco hängt eine Clique von fünf Schülern an einer Mauer ab – deshalb nennen sie sich „die Waldos“.</p>
+        <p>Im Herbst <span class="year">1971</span> bekommen sie eine Schatzkarte: Ein Mitglied der Küstenwache kann sein Hanffeld auf der Halbinsel Point Reyes nicht mehr pflegen. Die Waldos verabreden sich nach dem Training um <b>4:20</b> an der Statue von Louis Pasteur auf dem Schulgelände, um das Feld zu suchen.</p>
+        <p>Gefunden haben sie es nie. Aber „4:20“ wird ihr Codewort fürs Kiffen – eins, das Eltern und Lehrer nicht verstehen.</p>
+      </section>
+
+      <section class="card">
+        <h3>Wie es um die Welt ging</h3>
+        <ul>
+          <li><b>Grateful Dead:</b> Über Freunde und Familie haben die Waldos Kontakt zur Band. Der Code verbreitet sich in deren Umfeld und unter den Fans, den „Deadheads“, die der Band von Konzert zu Konzert folgen.</li>
+          <li><span class="year">1990</span> verteilen Deadheads in Oakland Flyer: Treffen am 20. April um 4:20 zum Kiffen. Ein Reporter des Cannabis-Magazins <i>High Times</i> bekommt einen davon.</li>
+          <li><span class="year">1991</span> druckt <i>High Times</i> den Flyer ab. Danach benutzt das Magazin „420“ immer wieder – und macht den Code weltweit bekannt.</li>
+          <li>Die Waldos haben Briefe und andere Belege aus den 1970ern aufgehoben, in denen sie „420“ benutzen. Heute gelten sie bei den meisten Fachleuten als Urheber.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>Wo es Zweifel gibt</h3>
+        <p>Ganz unumstritten ist die Geschichte nicht. Ein anderer Mann aus San Rafael behauptete 2012, die Waldos hätten den Begriff von ihm und seinem Umfeld übernommen. Für diese Version gibt es aber weniger Belege. Und wie so oft bei Codes aus der Jugendkultur: Wer etwas wirklich zuerst gesagt hat, lässt sich nach 50 Jahren kaum noch beweisen.</p>
+      </section>
+
+      <section class="card">
+        <h3>Mythen, die nicht stimmen</h3>
+        <ul>
+          <li><b>„420 ist ein Polizeicode für Kiffen.“</b> Nein – einen solchen Code gibt es nicht.</li>
+          <li><b>„Hanf enthält genau 420 Wirkstoffe.“</b> Nein – Cannabis enthält mehrere hundert Stoffe, aber die Zahl schwankt und hat mit 420 nichts zu tun.</li>
+          <li><b>„Es geht um einen Song von Bob Dylan.“</b> In „Rainy Day Women #12 &amp; 35“ ergibt 12 × 35 zwar 420 – aber das ist Zufall.</li>
+          <li><b>„Es ist der Todestag eines Musikers.“</b> Weder Bob Marley noch Jimi Hendrix noch Janis Joplin sind am 20. April gestorben.</li>
+          <li><b>„Es hat mit dem 20. April 1889 zu tun.“</b> Dass an dem Tag auch Hitler geboren wurde, ist reiner Zufall und hat mit dem Code nichts zu tun.</li>
+          <li><b>Andersherum stimmt es:</b> Das kalifornische Gesetz zu medizinischem Cannabis von 2003 heißt „Senate Bill 420“ – benannt nach dem Code, nicht umgekehrt.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>4/20 heute</h3>
+        <p>Am 20. April treffen sich jedes Jahr Tausende Menschen, um gemeinsam zu kiffen und für Legalisierung zu demonstrieren – zum Beispiel auf dem „Hippie Hill“ im Golden Gate Park in San Francisco. Und weil es auf der Welt immer irgendwo 4:20 ist, gibt es diese App.</p>
+      </section>
+
+      <section class="card oil">
+        <h3>Und 710?</h3>
+        <p>Dreh „710“ auf den Kopf, dann steht da „OIL“. Deshalb ist der 10. Juli (7/10) der Feiertag für Haschöl, Wax und andere Extrakte – den kleinen Bruder von 4/20.</p>
+      </section>
+
+      <p class="foot">Bitte verantwortungsvoll genießen – und nur, wo es legal ist 🌿</p>
+    </main>
+
+    <!-- ========== English ========== -->
+    <main class="story" lang="en">
+      <p><a class="back" href="./">← Back to the app</a></p>
+      <h2>What is 420?</h2>
+      <p class="lead">“420” is probably the best-known code in cannabis culture: 4:20 in the afternoon is the time to smoke, April 20 its holiday. Where it comes from isn't completely certain – but one story has by far the best evidence.</p>
+
+      <section class="card first">
+        <h3>The Waldos, 1971</h3>
+        <p>At San Rafael High School, north of San Francisco, a group of five students hangs out by a wall – so they call themselves “the Waldos”.</p>
+        <p>In the fall of <span class="year">1971</span> they get hold of a treasure map: a member of the Coast Guard can no longer tend his cannabis patch on the Point Reyes peninsula. The Waldos agree to meet after sports practice at <b>4:20</b> by the statue of Louis Pasteur on campus to go and look for it.</p>
+        <p>They never find it. But “4:20” becomes their code word for smoking – one that parents and teachers don't understand.</p>
+      </section>
+
+      <section class="card">
+        <h3>How it spread</h3>
+        <ul>
+          <li><b>Grateful Dead:</b> Through friends and family the Waldos have ties to the band. The code spreads through the band's circle and its fans, the “Deadheads”, who follow the band from show to show.</li>
+          <li>In <span class="year">1990</span> Deadheads in Oakland hand out flyers inviting people to smoke at 4:20 on April 20. A reporter for the cannabis magazine <i>High Times</i> gets one.</li>
+          <li>In <span class="year">1991</span> <i>High Times</i> prints the flyer. From then on the magazine uses “420” again and again – and makes the code known worldwide.</li>
+          <li>The Waldos kept letters and other evidence from the 1970s in which they use “420”. Today most experts credit them as its originators.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>Where there's doubt</h3>
+        <p>The story isn't completely undisputed. In 2012 another man from San Rafael claimed the Waldos had picked the term up from him and his circle, though there is less evidence for his version. And as so often with youth slang: after 50 years it's hard to prove who really said something first.</p>
+      </section>
+
+      <section class="card">
+        <h3>Myths that aren't true</h3>
+        <ul>
+          <li><b>“420 is a police code for smoking pot.”</b> No – there is no such code.</li>
+          <li><b>“Cannabis contains exactly 420 compounds.”</b> No – it contains several hundred, but the number varies and has nothing to do with 420.</li>
+          <li><b>“It's about a Bob Dylan song.”</b> In “Rainy Day Women #12 &amp; 35”, 12 × 35 does make 420 – but that's a coincidence.</li>
+          <li><b>“It's the day a musician died.”</b> Neither Bob Marley nor Jimi Hendrix nor Janis Joplin died on April 20.</li>
+          <li><b>“It has to do with April 20, 1889.”</b> That Hitler was born that day is pure coincidence and has nothing to do with the code.</li>
+          <li><b>The other way round is true:</b> California's 2003 medical cannabis law is called “Senate Bill 420” – named after the code, not the other way round.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h3>4/20 today</h3>
+        <p>Every April 20, thousands of people gather to smoke together and rally for legalization – for example on “Hippie Hill” in San Francisco's Golden Gate Park. And because it's always 4:20 somewhere in the world, there's this app.</p>
+      </section>
+
+      <section class="card oil">
+        <h3>And 710?</h3>
+        <p>Turn “710” upside down and it reads “OIL”. That's why July 10 (7/10) is the holiday for hash oil, wax and other extracts – 4/20's little sibling.</p>
+      </section>
+
+      <p class="foot">Enjoy responsibly – and only where it's legal 🌿</p>
+    </main>
+  </div>
+  <script>
+    document.title = document.documentElement.lang === "de" ? "Was ist 420? – 4:20 Now" : "What is 420? – 4:20 Now";
+  </script>
+</body>
+</html>

@@ -79,12 +79,15 @@ body {
 .egg-sub { color: var(--muted); }
 .egg-emoji { flex: none; font-size: 1.25rem; }
 .egg-morning { background: #f6ecc8; }
-.egg-apr20, .egg-apr1 {
+.egg-oil { background: #f3dd9a; }
+.egg-oil b { color: #7a5410; }
+.egg-apr20, .egg-apr1, .egg-jul10 {
   background: linear-gradient(90deg, #4f9d4f, #2f6e37);
   box-shadow: 0 6px 18px rgba(63, 143, 72, 0.25);
 }
-.egg-apr20 b, .egg-apr1 b, .egg-apr20 .egg-sub, .egg-apr1 .egg-sub { color: #fff; }
-.egg-apr20 .egg-sub, .egg-apr1 .egg-sub { opacity: 0.85; }
+.egg-apr20 b, .egg-apr1 b, .egg-jul10 b,
+.egg-apr20 .egg-sub, .egg-apr1 .egg-sub, .egg-jul10 .egg-sub { color: #fff; }
+.egg-apr20 .egg-sub, .egg-apr1 .egg-sub, .egg-jul10 .egg-sub { opacity: 0.85; }
 .egg-apr20 .egg-emoji { animation: wiggle 1.2s ease-in-out infinite alternate; }
 @keyframes wiggle { from { transform: rotate(-12deg) scale(1); } to { transform: rotate(12deg) scale(1.15); } }
 @media (prefers-reduced-motion: reduce) { .egg-apr20 .egg-emoji { animation: none; } }
@@ -419,6 +422,19 @@ button.chip:hover { background: rgba(20, 55, 26, 0.75); }
 .install-btn:hover { background: var(--green-dark); }
 
 .foot { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 1.5rem; }
+.about-link {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--green-dark);
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.about-link:hover { background: #dde3c4; }
 
 /* ---------- settings dialog ---------- */
 dialog {

@@ -58,11 +58,14 @@ const TEXT = {
     pageOf: (i, n) => `${i} of ${n}`,
     carousel: "carousel",
     titleLit: (city) => `🔥 4:20 in ${city}`,
+    whatIs420: "What is 420?",
     prev: "Previous",
     next: "Next",
     eggs: {
       apr20: ["🎉", "Happy 4/20!", "Today is the high holiday – worldwide."],
       apr1: ["🥳", "Bubatz is legal!", "In Germany since April 1, 2024 – no April Fools' joke."],
+      jul10: ["🍯", "Happy 7/10!", "Turn 710 upside down and it reads OIL – today is dab day."],
+      oil: ["🍯", "7:10", "Upside down that reads OIL. Dab time, anyone?"],
       morning: ["☀️", "Wake and bake", "Good morning, sunshine."],
       days: [
         ["😌", "Sundaze", "Nothing to do, all day long."],
@@ -113,11 +116,14 @@ const TEXT = {
     pageOf: (i, n) => `${i} von ${n}`,
     carousel: "Karussell",
     titleLit: (city) => `🔥 Jetzt 4:20 in ${city}`,
+    whatIs420: "Was ist 420?",
     prev: "Zurück",
     next: "Weiter",
     eggs: {
       apr20: ["🎉", "Frohen 4/20!", "Heute ist weltweiter Kiffer-Feiertag."],
       apr1: ["🥳", "Bubatz ist legal!", "Seit dem 1. April 2024 in Deutschland – kein Aprilscherz."],
+      jul10: ["🍯", "Happy 7/10!", "Dreh 710 auf den Kopf, dann steht da OIL – heute ist Dab-Day."],
+      oil: ["🍯", "7:10", "Auf dem Kopf heißt das OIL. Jemand Lust auf Dabs?"],
       morning: ["☀️", "Wake and bake", "Guten Morgen, Sonnenschein."],
       days: [
         ["😌", "Sundaze", "Den ganzen Tag nichts vor."],
@@ -330,6 +336,8 @@ function pickEgg(date) {
   const hour = date.getHours();
   if (month === 4 && day === 20) return ["apr20", t.eggs.apr20];
   if (month === 4 && day === 1) return ["apr1", t.eggs.apr1];
+  if (month === 7 && day === 10) return ["jul10", t.eggs.jul10];
+  if (hour % 12 === 7 && date.getMinutes() === 10) return ["oil", t.eggs.oil];
   if (hour >= 5 && hour < 11) return ["morning", t.eggs.morning];
   return ["day" + date.getDay(), t.eggs.days[date.getDay()]];
 }
