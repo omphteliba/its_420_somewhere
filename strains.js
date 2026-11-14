@@ -92,7 +92,7 @@ const STRAINS = [
       en: "High-CBD, low-THC variety bred by the Stanley brothers in Colorado – famous in the medical debate.",
       de: "CBD-reiche, THC-arme Sorte der Stanley-Brüder aus Colorado – bekannt aus der Medizin-Debatte.",
     },
-    wiki: "https://en.wikipedia.org/wiki/Charlotte%27s_Web_(cannabis)",
+    wiki: "https://en.wikipedia.org/wiki/Charlotte%27s_Web_(cannabis)", wikiDe: "https://de.wikipedia.org/wiki/Charlotte%E2%80%99s_Web",
   },
   {
     name: "Jarilla de Sinaloa", cc: "mx", tz: "America/Mazatlan",
@@ -219,7 +219,7 @@ const STRAINS = [
       en: "Dutch coffeeshop icon of the 1990s, named for its frosty white trichomes.",
       de: "Coffeeshop-Ikone der 90er aus den Niederlanden, benannt nach den weißen Harzdrüsen.",
     },
-    wiki: "https://en.wikipedia.org/wiki/White_Widow_(cannabis)",
+    wiki: "https://en.wikipedia.org/wiki/White_Widow_(cannabis)", wikiDe: "https://de.wikipedia.org/wiki/White_Widow",
   },
   {
     name: "Ruderalis", cc: "ru", tz: "Asia/Novosibirsk",
@@ -228,7 +228,7 @@ const STRAINS = [
       en: "Not a strain but a hardy wild type that flowers automatically – the reason “autoflowers” exist.",
       de: "Kein Strain, sondern eine robuste Wildform, die automatisch blüht – ihr verdanken wir „Autoflowers“.",
     },
-    wiki: "https://en.wikipedia.org/wiki/Cannabis_ruderalis",
+    wiki: "https://en.wikipedia.org/wiki/Cannabis_ruderalis", wikiDe: "https://de.wikipedia.org/wiki/Ruderal-Hanf",
   },
 
   // ---------- Africa ----------
@@ -339,7 +339,7 @@ const STRAINS = [
       en: "Named after the mountain range on the Afghanistan–Pakistan border – the origin of the word “Kush”.",
       de: "Benannt nach dem Gebirge an der Grenze zwischen Afghanistan und Pakistan – daher kommt das Wort „Kush“.",
     },
-    wiki: "https://en.wikipedia.org/wiki/Kush_(cannabis)",
+    wiki: "https://en.wikipedia.org/wiki/Kush_(cannabis)", wikiDe: "https://de.wikipedia.org/wiki/Kush_%28Hanfsorte%29",
   },
   {
     name: "Mazar-i-Sharif", cc: "af", tz: "Asia/Kabul",

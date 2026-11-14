@@ -56,6 +56,8 @@ const TEXT = {
     hybrid: "Hybrid",
     ruderalis: "Ruderalis",
     pageOf: (i, n) => `${i} of ${n}`,
+    carousel: "carousel",
+    titleLit: (city) => `🔥 4:20 in ${city}`,
     prev: "Previous",
     next: "Next",
     eggs: {
@@ -109,6 +111,8 @@ const TEXT = {
     hybrid: "Hybrid",
     ruderalis: "Ruderalis",
     pageOf: (i, n) => `${i} von ${n}`,
+    carousel: "Karussell",
+    titleLit: (city) => `🔥 Jetzt 4:20 in ${city}`,
     prev: "Zurück",
     next: "Weiter",
     eggs: {
@@ -150,6 +154,7 @@ function applySettings() {
   document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
     el.setAttribute("aria-label", t[el.dataset.i18nAria]);
   });
+  $("strain-list").setAttribute("aria-roledescription", t.carousel);
   lastTimelineKey = "";
   lastStrainKey = "";
   lastHeroCity = null;
@@ -313,7 +318,7 @@ function render(date) {
   renderEgg(date);
 
   document.title = lit
-    ? `🔥 4:20 in ${cityName(hero)} – 4:20 Now`
+    ? `${t.titleLit(cityName(hero))} – 4:20 Now`
     : `${cityName(nextHead)} ${fmtWait(next.until)} – 4:20 Now`;
 }
 
@@ -400,7 +405,8 @@ function pickStrains(date, current) {
 function strainCard(s) {
   const q = encodeURIComponent(s.name);
   const links = [];
-  if (s.wiki) links.push(`<a href="${s.wiki}" target="_blank" rel="noopener">Wikipedia ↗</a>`);
+  const wiki = (lang === "de" && s.wikiDe) || s.wiki;
+  if (wiki) links.push(`<a href="${wiki}" target="_blank" rel="noopener">Wikipedia ↗</a>`);
   links.push(`<a href="https://www.leafly.com/search?q=${q}&searchCategory=strain" target="_blank" rel="noopener">Leafly ↗</a>`);
   return `<article class="strain">
     <div class="strain-icon ${s.type}"><img src="leaf.svg" alt=""></div>
