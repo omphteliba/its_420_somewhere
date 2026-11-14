@@ -58,6 +58,20 @@ const TEXT = {
     pageOf: (i, n) => `${i} of ${n}`,
     prev: "Previous",
     next: "Next",
+    eggs: {
+      apr20: ["🎉", "Happy 4/20!", "Today is the high holiday – worldwide."],
+      apr1: ["🥳", "Bubatz is legal!", "In Germany since April 1, 2024 – no April Fools' joke."],
+      morning: ["☀️", "Wake and bake", "Good morning, sunshine."],
+      days: [
+        ["😌", "Sundaze", "Nothing to do, all day long."],
+        ["🍕", "Munchie Monday", "The fridge is calling."],
+        ["🍋", "Terpsday", "Take a sniff – it's all about the terpenes."],
+        ["🍯", "Wax Wednesday", "Sticky middle of the week."],
+        ["✨", "Trichome Thursday", "Almost weekend, glittering already."],
+        ["🙌", "Highday am Friday", "Bring on the weekend."],
+        ["🌞", "Sativa Saturday", "Up and about."],
+      ],
+    },
   },
   de: {
     tagline: "Irgendwo ist immer 4:20.",
@@ -97,6 +111,20 @@ const TEXT = {
     pageOf: (i, n) => `${i} von ${n}`,
     prev: "Zurück",
     next: "Weiter",
+    eggs: {
+      apr20: ["🎉", "Frohen 4/20!", "Heute ist weltweiter Kiffer-Feiertag."],
+      apr1: ["🥳", "Bubatz ist legal!", "Seit dem 1. April 2024 in Deutschland – kein Aprilscherz."],
+      morning: ["☀️", "Wake and bake", "Guten Morgen, Sonnenschein."],
+      days: [
+        ["😌", "Sundaze", "Den ganzen Tag nichts vor."],
+        ["🍕", "Munchie Monday", "Der Kühlschrank ruft."],
+        ["🍋", "Terpsday", "Riech mal rein – auf die Terpene kommt's an."],
+        ["🍯", "Wax Wednesday", "Klebrige Wochenmitte."],
+        ["✨", "Trichome Thursday", "Fast Wochenende, glitzert schon."],
+        ["🙌", "Highday am Friday", "Das Wochenende kann kommen."],
+        ["🌞", "Sativa Saturday", "Hellwach und unterwegs."],
+      ],
+    },
   },
 };
 
@@ -125,6 +153,7 @@ function applySettings() {
   lastTimelineKey = "";
   lastStrainKey = "";
   lastHeroCity = null;
+  lastEggKey = "";
   distanceText.textContent = t.howFar;
   if (userPos) showDistance();
 }
@@ -203,11 +232,13 @@ const progressFill = $("progress-fill");
 const youClock = $("you-clock");
 const youNext = $("you-next");
 const timelineEl = $("timeline");
+const eggEl = $("egg");
 const userTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 let lastHeroCity = null;
 let lastTimelineKey = "";
 let lastStrainKey = "";
+let lastEggKey = "";
 const strainList = $("strain-list");
 const strainsHint = $("strains-hint");
 let userPos = null;
@@ -279,10 +310,32 @@ function render(date) {
   }
 
   renderStrains(date, current);
+  renderEgg(date);
 
   document.title = lit
     ? `🔥 4:20 in ${cityName(hero)} – 4:20 Now`
     : `${cityName(nextHead)} ${fmtWait(next.until)} – 4:20 Now`;
+}
+
+// ---------- easter eggs (by the user's local date and time) ----------
+
+function pickEgg(date) {
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hour = date.getHours();
+  if (month === 4 && day === 20) return ["apr20", t.eggs.apr20];
+  if (month === 4 && day === 1) return ["apr1", t.eggs.apr1];
+  if (hour >= 5 && hour < 11) return ["morning", t.eggs.morning];
+  return ["day" + date.getDay(), t.eggs.days[date.getDay()]];
+}
+
+function renderEgg(date) {
+  const [id, [emoji, title, sub]] = pickEgg(date);
+  if (lang + id === lastEggKey) return;
+  lastEggKey = lang + id;
+  eggEl.className = `egg egg-${id.startsWith("day") ? "day" : id}`;
+  eggEl.innerHTML = `<span class="egg-emoji" aria-hidden="true">${emoji}</span>` +
+    `<span><b>${escapeHtml(title)}</b> <span class="egg-sub">${escapeHtml(sub)}</span></span>`;
 }
 
 // ---------- leaf sea (hero background) ----------
